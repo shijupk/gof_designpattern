@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gof_chainOfResponisiblity",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gof_command", "gof_command\gof_command.csproj", "{A13C0D10-62B2-4B0B-8D6A-23FC38B49EC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gof_iterator", "gof_iterator\gof_iterator.csproj", "{6E63DCD7-A1D2-436D-A76E-DDBD4A8E15A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A13C0D10-62B2-4B0B-8D6A-23FC38B49EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A13C0D10-62B2-4B0B-8D6A-23FC38B49EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A13C0D10-62B2-4B0B-8D6A-23FC38B49EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E63DCD7-A1D2-436D-A76E-DDBD4A8E15A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E63DCD7-A1D2-436D-A76E-DDBD4A8E15A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E63DCD7-A1D2-436D-A76E-DDBD4A8E15A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E63DCD7-A1D2-436D-A76E-DDBD4A8E15A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
