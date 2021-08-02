@@ -9,7 +9,7 @@ namespace gof_template
             var subClass = new SubClass();
             subClass.TemplateMethod();
 
-           Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
