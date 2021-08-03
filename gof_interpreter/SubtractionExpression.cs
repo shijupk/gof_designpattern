@@ -1,6 +1,6 @@
 ﻿namespace gof_interpreter
 {
-    public class SubtractionExpression : AbstractExpression
+    public class SubtractionExpression : MathExpression
     {
         public SubtractionExpression(IExpression firstExpression, IExpression secondExpression) :
             base(firstExpression, secondExpression) { }

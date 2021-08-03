@@ -1,6 +1,6 @@
 ﻿namespace gof_interpreter
 {
-    class AdditionExpression : AbstractExpression
+    class AdditionExpression : MathExpression
     {
 
         public AdditionExpression(IExpression firstExpression, IExpression secondExpression)

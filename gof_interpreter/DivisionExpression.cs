@@ -1,6 +1,6 @@
 ﻿namespace gof_interpreter
 {
-    public class DivisionExpression : AbstractExpression
+    public class DivisionExpression : MathExpression
     {
         public DivisionExpression(IExpression firstExpression, IExpression secondExpression)
             : base(firstExpression, secondExpression) { }

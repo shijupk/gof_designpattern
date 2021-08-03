@@ -1,10 +1,10 @@
 ﻿namespace gof_interpreter
 {
-    public abstract class AbstractExpression : IExpression
+    public abstract class MathExpression : IExpression
     {
         protected IExpression _firstExpression, _secondExpression;
 
-        public AbstractExpression(IExpression firstExpression, IExpression secondExpression)
+        public MathExpression(IExpression firstExpression, IExpression secondExpression)
         {
             _firstExpression = firstExpression;
             _secondExpression = secondExpression;

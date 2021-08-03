@@ -1,6 +1,6 @@
 ﻿namespace gof_interpreter
 {
-    public class MultiplicationExpression : AbstractExpression
+    public class MultiplicationExpression : MathExpression
     {
         public MultiplicationExpression(IExpression firstExpression, IExpression secondExpression) :
             base(firstExpression, secondExpression) { }
