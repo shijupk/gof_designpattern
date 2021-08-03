@@ -6,10 +6,21 @@ namespace gof_interpreter
     public class ExpressionParser
     {
         Stack<IExpression> _expressionStack = new Stack<IExpression>();
+        public IStrategy ConversionStrategy { get; set; }
+
+        public ExpressionParser()
+        {
+            ConversionStrategy = new InfixStrategy();
+        }
 
         public int Parse(string expression)
         {
-            string[] tokens = expression.Split(" ");
+
+            Console.WriteLine($"----------------------------------------- To POSTFIX ------------------------------------------");
+            var postFixExpression = ConversionStrategy.Convert(expression);
+            Console.WriteLine($"PostFix Expression '{postFixExpression}'");
+            string[] tokens = postFixExpression.Split(" ");
+
             foreach (string token in tokens)
             {
                 if(string.IsNullOrWhiteSpace(token))
@@ -52,61 +63,6 @@ namespace gof_interpreter
 
         }
 
-        public string InfixToPostFix(string expression)
-        {
-            string postFix = "";
-
-            Stack<char> literalStack = new Stack<char>();
-
-            foreach (char literal in expression)
-            {
-                if (literal == ' ')
-                {
-                    continue;
-                }
-
-                if (char.IsLetterOrDigit(literal))
-                {
-                    postFix += literal + " ";
-                }
-                else if(literal == '(')
-                {
-                    literalStack.Push(literal);
-                }
-                else if (literal == ')')
-                {
-                    while(literalStack.Count > 0 && literalStack.Peek() != '(')
-                    {
-                        postFix += literalStack.Pop() + " ";
-                    }
-
-                    if(literalStack.Count > 0 && literalStack.Peek() != '(')
-                    {
-                        return "Invalid Expression";
-                    }
-                    else
-                    {
-                        literalStack.Pop();
-                    }
-                }
-                else
-                {
-                    while(literalStack.Count > 0 && ExpressionFactory.Prec(literal) <= ExpressionFactory.Prec(literalStack.Peek()))
-                    {
-                        postFix += literalStack.Pop() + " ";
-                    }
-
-                    literalStack.Push(literal);
-                }
-            }
-
-            while(literalStack.Count > 0)
-            {
-                postFix += literalStack.Pop() + " ";
-
-            }
-
-            return postFix;
-        }
+        
     }
 }
