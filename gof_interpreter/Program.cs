@@ -6,12 +6,17 @@ namespace gof_interpreter
     {
         static void Main(string[] args)
         {
-            string input = "3 4 5 + *";
+            string input = "(3 + 4) * 5";
 
             Console.WriteLine($"----------------------------------------- INPUT ------------------------------------------");
             Console.WriteLine($"Input: {input}");
             ExpressionParser parser = new ExpressionParser();
-            var result = parser.Parse(input);
+            Console.WriteLine($"----------------------------------------- To POSTFIX ------------------------------------------");
+            var postFix = parser.InfixToPostFix(input);
+
+            Console.WriteLine(postFix);
+            Console.WriteLine($"----------------------------------------- INTERPRETER ------------------------------------------");
+            var result = parser.Parse(postFix);
             Console.WriteLine($"----------------------------------------- RESULT ------------------------------------------");
             Console.WriteLine($"Result: {result}");
             Console.WriteLine($"-------------------------------------------------------------------------------------------");

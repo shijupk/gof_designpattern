@@ -12,6 +12,10 @@ namespace gof_interpreter
             string[] tokens = expression.Split(" ");
             foreach (string token in tokens)
             {
+                if(string.IsNullOrWhiteSpace(token))
+                {
+                    continue;
+                }
                 if (!ExpressionFactory.IsOperator(token))
                 {
                     Console.WriteLine($"----------------------------Terminal Expression: '{token}' ----------------------------------");
@@ -46,6 +50,63 @@ namespace gof_interpreter
             var result = _expressionStack.Pop();
             return result.Interpret();
 
+        }
+
+        public string InfixToPostFix(string expression)
+        {
+            string postFix = "";
+
+            Stack<char> literalStack = new Stack<char>();
+
+            foreach (char literal in expression)
+            {
+                if (literal == ' ')
+                {
+                    continue;
+                }
+
+                if (char.IsLetterOrDigit(literal))
+                {
+                    postFix += literal + " ";
+                }
+                else if(literal == '(')
+                {
+                    literalStack.Push(literal);
+                }
+                else if (literal == ')')
+                {
+                    while(literalStack.Count > 0 && literalStack.Peek() != '(')
+                    {
+                        postFix += literalStack.Pop() + " ";
+                    }
+
+                    if(literalStack.Count > 0 && literalStack.Peek() != '(')
+                    {
+                        return "Invalid Expression";
+                    }
+                    else
+                    {
+                        literalStack.Pop();
+                    }
+                }
+                else
+                {
+                    while(literalStack.Count > 0 && ExpressionFactory.Prec(literal) <= ExpressionFactory.Prec(literalStack.Peek()))
+                    {
+                        postFix += literalStack.Pop() + " ";
+                    }
+
+                    literalStack.Push(literal);
+                }
+            }
+
+            while(literalStack.Count > 0)
+            {
+                postFix += literalStack.Pop() + " ";
+
+            }
+
+            return postFix;
         }
     }
 }
