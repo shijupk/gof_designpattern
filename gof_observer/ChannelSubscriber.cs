@@ -12,7 +12,7 @@ namespace gof_observer
         }
         public void Update(INews news)
         {
-            Console.WriteLine($"=>    {Name} got an update Message: {news.Message}");
+            Console.WriteLine($"=>    {Name} got Message: {news.Message}");
         }
     }
 }

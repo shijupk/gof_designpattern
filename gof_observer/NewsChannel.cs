@@ -9,19 +9,19 @@ namespace gof_observer
 
         public void Subscribe(IObserver observer)
         {
-            Console.WriteLine($"=> {observer.Name} Subcribed the channel");
+            Console.WriteLine($" {observer.Name} Subcribed the channel");
             _observers.Add(observer);
         }
 
         public void Unsubscribe(IObserver observer)
         {
-            Console.WriteLine($"=> {observer.Name} Unsubscribed the channel");
+            Console.WriteLine($" {observer.Name} Unsubscribed the channel");
             _observers.Remove(observer);
         }
 
         public void Notify(INews news)
         {
-            Console.WriteLine($"=> New Notification!!! New Message: '{news.Message}'");
+            Console.WriteLine($" New Notification!!! New Message: '{news.Message}'");
 
             foreach (IObserver observer in _observers)
             {

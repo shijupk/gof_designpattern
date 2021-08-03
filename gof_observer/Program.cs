@@ -11,16 +11,16 @@ namespace gof_observer
             var alice = new ChannelSubscriber("Alice");
             var bob = new ChannelSubscriber("Bob");
 
-
+            Console.WriteLine($"------------------- SUBSCRIPTION ---------------------------");
             espn.Subscribe(alice);
             espn.Subscribe(bob);
-
+            Console.WriteLine($"------------------- NOTIFICATION ---------------------------");
             espn.Notify(new News("Olympic Update"));
-
+            Console.WriteLine($"------------------- SUBSCRIPTION ---------------------------");
             espn.Unsubscribe(alice);
-
+            Console.WriteLine($"------------------- NOTIFICATION ---------------------------");
             espn.Notify(new News("Cricket Update"));
-
+            Console.WriteLine($"-------------------------------------------------------------");
             Console.ReadKey();
 
         }
