@@ -10,7 +10,12 @@
             _secondExpression = secondExpression;
         }
 
-        public abstract int Interpret();
+        public int Interpret()
+        {
+            return DoCalculation(_firstExpression.Interpret(), _secondExpression.Interpret());
+        }
+
+        protected abstract int DoCalculation(int number1, int number2);
 
     }
 }

@@ -2,12 +2,13 @@
 {
     public class DivisionExpression : AbstractExpression
     {
-        public DivisionExpression(IExpression firstExpression, IExpression secondExpression) : base(firstExpression, secondExpression) { }
+        public DivisionExpression(IExpression firstExpression, IExpression secondExpression)
+            : base(firstExpression, secondExpression) { }
 
 
-        public override int Interpret()
+        protected override int DoCalculation(int number1, int number2)
         {
-            return _firstExpression.Interpret() / _secondExpression.Interpret();
+            return number1 / number2;
         }
     }
 }
