@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gof_mediator", "gof_mediato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gof_observer", "gof_observer\gof_observer.csproj", "{441EF140-F72A-4520-90C2-D82FDA913291}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gof_interpreter", "gof_interpreter\gof_interpreter.csproj", "{AC7938D8-6CF7-4ED2-B483-29C018D96180}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{441EF140-F72A-4520-90C2-D82FDA913291}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{441EF140-F72A-4520-90C2-D82FDA913291}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{441EF140-F72A-4520-90C2-D82FDA913291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC7938D8-6CF7-4ED2-B483-29C018D96180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC7938D8-6CF7-4ED2-B483-29C018D96180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC7938D8-6CF7-4ED2-B483-29C018D96180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC7938D8-6CF7-4ED2-B483-29C018D96180}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
