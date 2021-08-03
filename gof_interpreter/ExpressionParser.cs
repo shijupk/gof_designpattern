@@ -14,7 +14,7 @@ namespace gof_interpreter
             {
                 if (!ExpressionFactory.IsOperator(token))
                 {
-                    Console.WriteLine($"----------------------------Teminal Expression: '{token}' ----------------------------------");
+                    Console.WriteLine($"----------------------------Terminal Expression: '{token}' ----------------------------------");
                     IExpression number = ExpressionFactory.CreateExpression(token);
 
                     _expressionStack.Push(number);
@@ -23,7 +23,7 @@ namespace gof_interpreter
                 }
                 else if (ExpressionFactory.IsOperator(token))
                 {
-                    Console.WriteLine($"----------------------------Non Teminal Expression: '{token}' -------------------------------");
+                    Console.WriteLine($"----------------------------Non Terminal Expression: '{token}' -------------------------------");
                     IExpression firstExpression = _expressionStack.Pop();
                     IExpression secondExpression = _expressionStack.Pop();
 
