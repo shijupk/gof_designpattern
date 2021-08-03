@@ -18,7 +18,7 @@ namespace gof_interpreter
                     IExpression number = ExpressionFactory.CreateExpression(token);
 
                     _expressionStack.Push(number);
-                    Console.WriteLine($"Teminal Expression Pushed to stack: '{number.Interpret()}'");
+                    Console.WriteLine($"Terminal Expression Pushed to stack: '{number.Interpret()}'");
                     Console.WriteLine($"--------------------------------------------------------------------------------------------");
                 }
                 else if (ExpressionFactory.IsOperator(token))
@@ -38,7 +38,7 @@ namespace gof_interpreter
 
                     var resultExpression = ExpressionFactory.CreateExpression(numberExpression);
                     _expressionStack.Push(resultExpression);
-                    Console.WriteLine($"Teminal Expression Pushed to stack: '{resultExpression.Interpret()}'");
+                    Console.WriteLine($"Terminal Expression Pushed to stack: '{resultExpression.Interpret()}'");
                     Console.WriteLine($"------------------------------------------------------------------------------------------");
                 }
             }
